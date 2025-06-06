@@ -17,7 +17,8 @@ import fs from "fs";
                 resource_type: 'auto'
             })
             // File has uploadedd successfully
-            console.log("File is uploded", response.url)
+            //console.log("File is uploded", response.url)
+            fs.unlinkSync(localFilePath);
             return response;
         } catch (error) {
             fs.unlinkSync(localFilePath)  //  Remove the file file  form local storage
